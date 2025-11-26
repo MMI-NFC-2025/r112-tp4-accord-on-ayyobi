@@ -5,10 +5,6 @@
     display: flex;
 
 }
-.accordeon>details>summary {
-    list-style: none;
-
-}
 details{
     display: flex;
     width: 100px;
