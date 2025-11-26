@@ -3,22 +3,24 @@
 */
 .accordeon{
     display: flex;
-
+    flex-direction: column;
 }
 details{
     display: flex;
     width: 100px;
     overflow: hidden;
     transition: width 2s;
-    padding-left: 20px;
+    padding: 20px;
     position: relative;
+    background-color: #dbdbdb;
 }
 
 details[open] {
     /* ouvert */
-    width: calc(100px + 20rem);
+    width: calc(100px + 10rem);
    
 }
+
 
 .accordeon>details>summary {
     list-style: none;
@@ -27,4 +29,20 @@ details[open] {
 .accordeon>details>summary::marker,
 .accordeon>details>summary::-webkit-details-marker {
     display: none;
+}
+
+.accordeon>details>summary::after {
+    content: "▸";
+    font-size: 10rem;
+    color: #888;
+    margin-left: auto;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Quand details est ouvert */
+.accordeon>details[open]>summary::after {
+    transform: rotate(90deg);
+    /* ✔ rotation fluide */
+    color: #dfadbe;
 }
